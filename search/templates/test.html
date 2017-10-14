@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        {% for t in title %}
+            <div>
+            {{ t.id }}
+            {{ t.push }}
+            {{ t.title }}
+            {{ t.date }}
+            {{ t.name }}
+            </div>        
+        {% endfor %}
+    </p>
+</body>
+</html>
+
+<!--
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+{% block content %}
+
+<h2>Person search</h2>
+
+    <form method="get" action="." class="form" role="form">
+        {{ form.non_field_errors }}
+        <div class="form-group">
+                {{ form.as_p }}
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Search">
+        </div>
+
+        {% if query %}
+            <h3>Results</h3>
+            <div>
+            <table class="table table-striped table-bordered" cellspacing="0" id='result_table'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PUSH</th>
+                        <th>TITLE</th>
+                        <th>DATE</th>
+                        <th>NAME</th>
+                </thead>
+                <tbody>
+                    {% for result in title %}
+                        <tr>
+                            <td>{{ t.id }}</td>
+                            <td> {{ t.push }}</td>
+                            <td>{{ t.title }}</td>
+                            <td>{{ t.date }}</td>
+                            <td>{{ t.name }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>No results found.</tr>
+                    {% endfor %}
+                </tbody>
+            <table>
+            </div>
+        {% endif %}
+    </form>
+{% endblock content %}
+
+{% block extrajs %}
+<script>
+$(document).ready(function() {
+    $('#result_table').DataTable({
+        "searching": false
+    });
+} );
+</script>
+{% endblock %}
+</body>
+</html>
+!-->

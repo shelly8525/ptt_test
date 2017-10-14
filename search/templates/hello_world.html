@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+    <head>
+    <title>SearchPTT</title> 
+    <style>
+	input[type=text] {
+	    position: absolute;
+        top: 50px;
+        left: 80px;
+    	width: 130px;
+    	box-sizing: border-box;
+    	border: 2px solid #ccc;
+    	border-radius: 4px;
+    	font-size: 16px;
+    	
+    	background-color: white;
+    	background-image: url("{% static 'searchicon.png' %}");
+    	background-position: 10px 10px;
+    	background-repeat: no-repeat;
+    	padding: 12px 20px 12px 40px;
+    	-webkit-transition: width 0.4s ease-in-out;
+    	transition: width 0.4s ease-in-out;
+	}
+
+	input[type=text]:focus {
+    	width: 90%;
+	}
+	
+	p{
+        position: absolute;
+        bottom: 15px;
+        right: 30px;
+	}
+	
+	</style>
+
+    </head>
+    <body>
+        <form style="margin:200px 150px auto 150px">
+  	    	<input type="text" name="search" placeholder="Search..">
+    	</form>
+    	
+    	<p style="padding:100% auto auto auto">
+        	<em>{{ current_time }}</em>
+    	</p>
+
+    </body> 
+</html>
